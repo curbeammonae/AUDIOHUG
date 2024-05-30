@@ -1,0 +1,43 @@
+.hero{
+    padding-top: 100px;
+    height: 100vh;
+    background: linear-gradient(to right, black, gray);
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+.hero-left span{
+    color: white;
+    font-size: 20px;
+    
+}
+.hero-left h1{
+    color: white;
+    font-size: 80px;
+    font-weight: 600;
+    
+}
+
+.hero-left p{
+    color: white;
+    font-size: 26px;
+}
+
+.hero-right img{
+    width: 705px;
+    border-radius: 30px;
+
+}
+.hero-button{
+   width: 206px;
+   height: 47px;
+   border-radius: 75px;
+margin-top: 40px;
+background-color: red;
+color: white;
+font-size: 22px;
+
+}
+.hero-button:hover{
+    cursor: pointer;
+}

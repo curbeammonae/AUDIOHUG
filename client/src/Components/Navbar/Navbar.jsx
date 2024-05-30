@@ -3,12 +3,12 @@ import "./Navbar.css";
 import logo from "../Assets/logo1.png";
 import cart from "../Assets/cart_icon.png";
 import { Link } from "react-router-dom";
-// import { ShopContext } from "../../Context/ShopContext";
+import { ShopContext } from "../../Context/ShopContext";
 import dropdown from "../Assets/nav_dropdown.png"
 
 export default function Navbar() {
 const [menu, setMenu] = useState("")
-// const {getTotalCartItems} = useContext(ShopContext)
+const {getTotalCartItems} = useContext(ShopContext)
 
 //dropdown menu
 const menuRef = useRef();
@@ -32,12 +32,11 @@ const dropdown_toggle = (e) => {
         <li onClick={()=>{setMenu("speakers")}}><Link style={{textDecoration: 'none'}} to='/speakers'>Speakers</Link>{menu === "speakers" ? <hr/>: <></>}</li>
       </ul>
       <div className="nav-login-cart">
-        {localStorage.getItem("auth-token")?<button >Logout</button>
-        :<Link to='/login'><button>Login</button></Link>}
-      
-      <Link to='/cart'> <img src={cart} alt="cart_icon" /></Link>
-        
-        {/* <div className="nav-cart-count">{getTotalCartItems()}</div> */}
+      {localStorage.getItem('auth-token')
+        ?<button onClick={()=>{localStorage.removeItem('auth-token');window.location.replace("/");}}>Logout</button>
+        :<Link to='/login' style={{ textDecoration: 'none' }}><button>Login</button></Link>}
+        <Link to="/cart"><img src={cart} alt="cart"/></Link>
+        <div className="nav-cart-count">{getTotalCartItems()}</div>
       </div>
     </div>
   );
