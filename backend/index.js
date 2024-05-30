@@ -254,7 +254,7 @@ app.post('/removeproduct',async (req,res)=>{
     })
 
 })
-
+//NEW PRODUCTS
 //creating api for getting all products
 app.get('/allproducts', async(req,res)=>{
     let products = await Product.find({})
